@@ -1,0 +1,27 @@
+<h1>All about dogs!</h1>
+
+<h3>Who is your favorite dog?</h3>
+
+<%= form_tag :action => 'create' do %>
+<p><label for = "dog_name">Dog's name</label>:
+<%= text_field 'dog', 'name' %></p>
+
+<p><label for = "dog_breed">Dog's breed</label>:
+<%= text_field 'dog', 'breed' %></p>
+
+<%= submit_tag "Add" %>
+
+<% end -%>
+
+<% if @dogs.blank? %>
+<p>There are not any dogs currently in the system.</p>
+<% else %>
+<p>These are the current dogs in our system</p>
+
+<ul id = "dogs">
+   <% @dogs.each do |c| %>
+   <li><%= c.name -%> is a <%= c.breed -%></li>
+   <% end %>
+</ul>
+
+<% end %>
