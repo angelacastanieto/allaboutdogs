@@ -1,0 +1,131 @@
+div.container {
+    width: 1800px;
+    height: 1200px;
+    background-color: #cccccc;
+}
+
+body {
+}
+* {
+  font-family: Arial;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: powderblue;
+    clear: left;
+    text-align: left;
+}
+
+.button {
+    background-color: powderblue;
+    border: none;
+    color: grey;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button:hover {
+  color: white;
+}
+
+nav {
+    float: left;
+    max-width: 30%;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 5%;
+}
+
+article {
+    margin-left: 15%;
+    border-left: 1px solid gray;
+    padding: 1em;
+    height: 85%;
+}
+
+.align-parent {
+  display: flex;
+}
+
+#header-image {
+  margin-left: 2%;
+}
+
+/* unvisited link */
+a:link {
+    color: grey;
+}
+
+/* visited link */
+a:visited {
+    color: grey;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+}
+
+/* selected link */
+a:active {
+    color: whi;
+}
+
+a.active-page {
+  color: white;
+}
+
+nav ul li {
+    background: powderblue;
+    padding: 3%;
+    margin: 10%;
+}
+
+div.bottom {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: none;
+    margin-bottom: none;
+}
+
+div.col {
+    float: left;
+    width: 33%;
+}
+
+input[type=text], select {
+    width: 30%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover{background-color:#f5f5f5}
