@@ -4,7 +4,7 @@
   <header>
     <div class="align-parent">
       <h1>All about dogs</h1>
-      <img id="header-image" width="4%" height="4%" src="http://www.clipartbest.com/cliparts/pT5/6Ap/pT56ApLAc.png"/>
+      <img id="header-image" width="4%" height="4%" src="/images/dogpaws.png">
     </div>
   </header>
 
@@ -54,7 +54,7 @@
 function addDog(name, breed) {
   var div = document.getElementById("fave-dogs");
 
-  div.innerHTML = div.innerHTML + "<h4>" + name + ": " + breed + "</h4>";
+  div.innerHTML = div.innerHTML + "<h4>" + name + " - " + breed + "</h4>";
 }
 
 var dogs = $('#dog-data').data('dogs');
