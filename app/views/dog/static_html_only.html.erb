@@ -1,0 +1,48 @@
+<div class="container">
+  <header>
+    <div class="align-parent">
+      <h1>All about dogs</h1>
+      <img id="header-image" width="4%" height="4%" src="http://www.clipartbest.com/cliparts/pT5/6Ap/pT56ApLAc.png"/>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <a class="active-page" href="/dog/static_html_only"><li>HTML only</li></a>
+      <a href="/dog/static_styled"><li>HTML styled with CSS</li></a>
+      <a href="/dog/no_data"><li>Dynamic webpage without data</li></a>
+      <a href="/dog/with_data"><li>Dynamic webpage with data</li></a>
+    </ul>
+  </nav>
+
+  <article>
+    <div id="container">
+      <div class="bottom">
+          <div class="col">
+            <h3>Who is your favorite dog?</h3>
+            <form id="dog-form">
+            	<label>Dog's name <input id="name-input" type="text" name="name"></label><br>
+            	<label>Dog's breed <input style="margin-top:6%" id="breed-input" type="text" name="breed"></label><br>
+              <input style="margin-top:4%" class="button" value="Add" type="submit">
+            </form>
+          </div>
+          <div class="col">
+            <% if @dogs.blank? %>
+            <h3>No favorites yet!</h3>
+            <% else %>
+            <h3>Some favorites</h3>
+            <div id="fave-dogs"/>
+          </div>
+      </div>
+      <div>
+    </div>
+  </div>
+
+  </article>
+  <footer><a href="https://www.paws.org/kids/learn/pets/dogs/">Learn more about dogs!</a></footer>
+
+</div>
+
+<% end %>
+
+</body>

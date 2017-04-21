@@ -10,10 +10,10 @@
 
   <nav>
     <ul>
-      <a href="#"><li>HTML only</li></a>
-      <a href="#"><li>HTML styled with CSS</li></a>
-      <a href="#"><li>Dynamic webpage without data</li></a>
-      <a class="active-page" href="#"><li>Dynamic webpage with data</li></a>
+      <a href="/dog/static_html_only"><li>HTML only</li></a>
+      <a href="/dog/static_styled"><li>HTML styled with CSS</li></a>
+      <a href="/dog/no_data"><li>Dynamic webpage without data</li></a>
+      <a class="active-page" href="/dog/with_data"><li>Dynamic webpage with data</li></a>
     </ul>
   </nav>
 
@@ -22,12 +22,11 @@
       <div class="bottom">
           <div class="col">
             <h3>Who is your favorite dog?</h3>
-
             <%= form_tag :action => 'create' do %>
-            <p><label for = "dog_name">Dog's name</label>:
+            <p><label for = "dog_name">Dog's name</label>
             <%= text_field 'dog', 'name' %></p>
 
-            <p><label for = "dog_breed">Dog's breed</label>:
+            <p><label for = "dog_breed">Dog's breed</label>
             <%= text_field 'dog', 'breed' %></p>
 
             <%= submit_tag "Add", class: 'button' %>
@@ -38,19 +37,8 @@
             <% if @dogs.blank? %>
             <h3>No favorites yet!</h3>
             <% else %>
-            <table id="dogs">
-              <caption><h3>Some favorites:</h3></caption>
-              <tr>
-                <th>Dog's name</th>
-                <th>Dog's breed</th>
-              </tr>
-               <% @dogs.each do |c| %>
-               <tr>
-                 <td><%= c.name -%></td>
-                 <td><%= c.breed -%></td>
-               </tr>
-               <% end  %>
-            </table>
+            <h3>Some favorites</h3>
+            <div id="fave-dogs"/>
           </div>
       </div>
       <div>
@@ -59,8 +47,24 @@
 
   </article>
   <footer><a href="https://www.paws.org/kids/learn/pets/dogs/">Learn more about dogs!</a></footer>
+  <%= content_tag :div, nil, id: "dog-data", data: {dogs: @dogs} %>
 
 </div>
+<script>
+function addDog(name, breed) {
+  var div = document.getElementById("fave-dogs");
+
+  div.innerHTML = div.innerHTML + "<h4>" + name + ": " + breed + "</h4>";
+}
+
+var dogs = $('#dog-data').data('dogs');
+
+
+for (var i = 0; i < dogs.length; i++) {
+  addDog(dogs[i].name, dogs[i].breed);
+}
+
+</script>
 
 <% end %>
 
